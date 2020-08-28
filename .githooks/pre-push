@@ -1,0 +1,11 @@
+#!/bin/sh
+
+echo "\n*** Running tests before push ***"
+./gradlew test
+
+if [ $? -ne 0 ]; then
+ echo "Tests must pass before push!"
+ exit 1
+fi
+
+echo "*** Tests finished ***\n"
